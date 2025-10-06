@@ -4,18 +4,30 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
+# โหลดค่า API KEY จาก .env
 load_dotenv()
 NASA_API_KEY = os.environ.get("NASA_API_KEY")
+if not NASA_API_KEY:
+    raise ValueError("กรุณาตั้งค่า NASA_API_KEY ในไฟล์ .env")
 
+# โฟลเดอร์จัดเก็บข้อมูล
 DATA_DIR = Path(__file__).parent.parent / "data"
 IMAGES_DIR = DATA_DIR / "images"
 INDEX_FILE = DATA_DIR / "index.json"
 
+# สร้างโฟลเดอร์ถ้าไม่มี
 DATA_DIR.mkdir(exist_ok=True)
 IMAGES_DIR.mkdir(exist_ok=True)
 
-def fetch_apod():
+def fetch_apod(date: str = None):
+    """
+    ดึง APOD ของ NASA
+    :param date: 'YYYY-MM-DD' ถ้าไม่ระบุจะใช้วันปัจจุบัน
+    """
     url = f"https://api.nasa.gov/planetary/apod?api_key={NASA_API_KEY}"
+    if date:
+        url += f"&date={date}"
+    
     r = requests.get(url)
     r.raise_for_status()
     data = r.json()
@@ -37,13 +49,24 @@ def fetch_apod():
     }
     _append_index(item)
 
-def fetch_mars():
-    url = f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key={NASA_API_KEY}"
+
+def fetch_mars(date: str = None):
+    """
+    ดึงภาพจากยาน Curiosity
+    :param date: 'YYYY-MM-DD' ถ้าไม่ระบุจะใช้ latest_photos
+    """
+    if date:
+        url = f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date={date}&api_key={NASA_API_KEY}"
+    else:
+        url = f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key={NASA_API_KEY}"
+
     r = requests.get(url)
     r.raise_for_status()
     data = r.json()
 
-    for photo in data.get("latest_photos", []):
+    photos = data.get("photos") if date else data.get("latest_photos", [])
+
+    for photo in photos:
         img_url = photo["img_src"]
         img_name = img_url.split("/")[-1]
         local_path = IMAGES_DIR / img_name
@@ -61,7 +84,11 @@ def fetch_mars():
         }
         _append_index(item)
 
+
 def _append_index(item: dict):
+    """
+    เพิ่มข้อมูลลง index.json
+    """
     data = []
     if INDEX_FILE.exists():
         if INDEX_FILE.stat().st_size > 0:  # file not empty
