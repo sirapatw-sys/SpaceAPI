@@ -5,7 +5,7 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-NASA_API_KEY = os.environ.get("NASA_API_KEY", "DEMO_KEY")
+NASA_API_KEY = os.environ.get("NASA_API_KEY")
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 IMAGES_DIR = DATA_DIR / "images"

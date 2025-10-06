@@ -5,7 +5,7 @@ import json
 DATA_DIR = Path(__file__).parent.parent / "data"
 INDEX_FILE = DATA_DIR / "index.json"
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="../templates")
 
 @app.route("/")
 def index():
