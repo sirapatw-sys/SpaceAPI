@@ -4,51 +4,130 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NASA Gallery</title>
+</head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-body { background-color: #f8f9fa; }
-h1 { text-align: center; margin: 2rem 0; }
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
+:root{
+    --bg: #0f1724; /* dark navy */
+    --card: #0b1220;
+    --muted: #9aa4b2;
+    --accent: #4f46e5; /* indigo */
 }
-.card {
-    background: white;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+html,body{height:100%;}
+body {
+    background: linear-gradient(180deg,#071024 0%, #071b2e 60%);
+    color: #e6eef7;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
-.card img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
+.site-header{padding:1rem 0;}
+.brand {font-weight:700; font-size:1.25rem; letter-spacing:0.4px}
+.gallery-container{padding:1.25rem; max-width:1200px; margin:0 auto}
+.grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    gap:1rem;
 }
-.card-body {
-    padding: 0.5rem;
-    text-align: center;
+.space-card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+    transition: transform .18s ease, box-shadow .18s ease;
 }
-.card-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin: 0;
+.space-card:hover{transform: translateY(-6px); box-shadow: 0 12px 30px rgba(15,23,42,0.7)}
+.space-img{height:180px; width:100%; object-fit:cover; display:block}
+.space-body{padding:0.75rem}
+.space-title{font-size:0.95rem; font-weight:600; margin:0 0 .25rem 0}
+.space-meta{color:var(--muted); font-size:0.82rem}
+.card-actions{display:flex; justify-content:space-between; gap:0.5rem; margin-top:0.5rem}
+.small-btn{font-size:0.85rem}
+.footer{padding:2rem 0; text-align:center; color:var(--muted)}
+
+/* responsive tweaks */
+@media (max-width:600px){
+    .space-img{height:140px}
 }
 </style>
 </head>
+</head>
 <body>
-<h1>🚀 NASA Gallery</h1>
-<div class="gallery">
-{% for item in items %}
-<div class="card">
-    <img src="{{ item.local_path }}" alt="{{ item.title }}" loading="lazy">
-    <div class="card-body">
-        <p class="card-title">{{ item.title }}</p>
-        <small>{{ item.date }} | {{ item.source }}</small>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container">
+                <a class="navbar-brand brand" href="#">🚀 Space Gallery</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="gallery-container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="m-0">Latest Images</h1>
+            <div class="text-muted">Showing {{ items|length }} items</div>
+        </div>
+
+        <section class="grid" aria-label="Gallery">
+            {% for item in items %}
+            <article class="space-card" role="article">
+                <img class="space-img" src="{{ item.local_path }}" alt="{{ item.title }}" loading="lazy" data-title="{{ item.title }}" data-src="{{ item.local_path }}">
+                <div class="space-body">
+                    <div class="space-title">{{ item.title }}</div>
+                    <div class="space-meta">{{ item.date }} · {{ item.source }}</div>
+                    <div class="card-actions">
+                        <button class="btn btn-sm btn-outline-light small-btn" data-bs-toggle="modal" data-bs-target="#previewModal" data-src="{{ item.local_path }}" data-title="{{ item.title }}"><i class="fa fa-eye me-1"></i>Preview</button>
+                        <a class="btn btn-sm btn-primary small-btn" href="{{ item.local_path }}" target="_blank" rel="noopener"><i class="fa fa-download me-1"></i>Open</a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </section>
+
+        <footer class="footer">Data courtesy of NASA APIs — built with ❤️</footer>
+    </main>
+
+    <!-- Preview modal -->
+    <div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9">
+                        <img id="previewImage" src="" alt="Preview" style="object-fit:contain; width:100%; height:100%; background:#000; border-radius:8px;">
+                    </div>
+                </div>
+                <div class="modal-footer bg-transparent border-0">
+                    <h5 id="previewTitle" class="text-white me-auto"></h5>
+                    <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-{% endfor %}
-</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Wire up preview modal to show clicked image
+        const previewModal = document.getElementById('previewModal');
+        if(previewModal){
+            previewModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const src = button.getAttribute('data-src');
+                const title = button.getAttribute('data-title') || '';
+                const img = document.getElementById('previewImage');
+                const t = document.getElementById('previewTitle');
+                img.src = src;
+                img.alt = title;
+                t.textContent = title;
+            });
+        }
+    </script>
 </body>
 </html>
