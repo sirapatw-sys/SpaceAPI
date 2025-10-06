@@ -71,10 +71,33 @@ body {
     </header>
 
     <main class="gallery-container">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h1 class="m-0">Latest Images</h1>
-            <div class="text-muted">Showing {{ items|length }} items</div>
-        </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h1 class="m-0">Latest Images</h1>
+                <div class="text-muted">Showing {{ items|length }} items</div>
+            </div>
+
+            <!-- Control panel -->
+            <div class="mb-3 d-flex gap-2 flex-wrap align-items-center">
+                <form class="d-flex gap-2" method="post" action="/fetch/apod">
+                    <input name="date" type="date" class="form-control form-control-sm" aria-label="APOD date">
+                    <button class="btn btn-sm btn-outline-light" type="submit">Fetch APOD</button>
+                </form>
+
+                <form class="d-flex gap-2" method="post" action="/fetch/mars">
+                    <input name="date" type="date" class="form-control form-control-sm" aria-label="Mars date">
+                    <button class="btn btn-sm btn-outline-light" type="submit">Fetch Mars</button>
+                </form>
+            </div>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="mb-3">
+                        {% for category, msg in messages %}
+                            <div class="alert alert-{{ 'success' if category=='success' else 'danger' }} alert-sm py-1" role="alert">{{ msg }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
 
         <section class="grid" aria-label="Gallery">
             {% for item in items %}
