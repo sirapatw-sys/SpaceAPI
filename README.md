@@ -80,6 +80,7 @@ python src/main.py fetch-apod --date 2025-10-06
 
 ```bash
 python src/main.py fetch-mars
+python src/main.py fetch-mars --date 2025-10-06
 ```
 
 3. **Serve the gallery locally**:
