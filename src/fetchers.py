@@ -10,8 +10,14 @@ NASA_API_KEY = os.getenv("NASA_API_KEY", "DEMO_KEY")
 DATA_DIR = Path(__file__).parent.parent / "data"
 INDEX_FILE = DATA_DIR / "index.json"
 
+# Also save images to Flask's static folder so hosting platforms can serve them
+STATIC_DIR = Path(__file__).parent.parent / "static"
+STATIC_IMAGES = STATIC_DIR / "images"
+
 # สร้าง data directory ถ้ายังไม่มี
 DATA_DIR.mkdir(exist_ok=True)
+STATIC_DIR.mkdir(exist_ok=True)
+STATIC_IMAGES.mkdir(parents=True, exist_ok=True)
 
 
 def fetch_apod(date: str | None = None):
@@ -30,13 +36,29 @@ def fetch_apod(date: str | None = None):
     data = response.json()
 
     # เตรียมข้อมูลภาพ
+    media_type = data.get("media_type", "image")
+    img_url = data.get("hdurl") or data.get("url")
+
+    local_path = None
+    if media_type == "image" and img_url:
+        img_name = img_url.split("/")[-1]
+        dst = STATIC_IMAGES / img_name
+        if not dst.exists():
+            img_data = requests.get(img_url).content
+            with open(dst, "wb") as f:
+                f.write(img_data)
+        # path relative to Flask static folder
+        local_path = f"images/{img_name}"
+
     item = {
         "type": "apod",
         "title": data.get("title", "Unknown"),
         "date": data.get("date", str(date or "")),
-        "url": data.get("url"),
+        "url": img_url,
+        "local_path": local_path,
         "explanation": data.get("explanation", ""),
-        "media_type": data.get("media_type", "image")
+        "media_type": media_type,
+        "source": "APOD"
     }
 
     # อ่าน index.json เดิม
@@ -90,12 +112,22 @@ def fetch_mars(date: str | None = None):
 
     # เพิ่มภาพทั้งหมด
     for p in photos[:20]:  # จำกัด 20 ภาพเพื่อความเบา
+        img_url = p["img_src"]
+        img_name = img_url.split("/")[-1]
+        dst = STATIC_IMAGES / img_name
+        if not dst.exists():
+            img_data = requests.get(img_url).content
+            with open(dst, "wb") as f:
+                f.write(img_data)
+
         items.append({
             "type": "mars",
             "date": p["earth_date"],
             "camera": p["camera"]["full_name"],
-            "url": p["img_src"],  # ✅ ใช้ URL ตรงจาก NASA
-            "rover": p["rover"]["name"]
+            "url": img_url,
+            "local_path": f"images/{img_name}",
+            "rover": p["rover"]["name"],
+            "source": "Mars Rover"
         })
 
     # บันทึกใหม่
