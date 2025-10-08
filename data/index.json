@@ -278,5 +278,488 @@
     "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04679/opgs/edr/fcam/FLB_812878895EDR_F1190924FHAZ00200M_.JPG",
     "local_path": "/data/images/FLB_812878895EDR_F1190924FHAZ00200M_.JPG",
     "source": "Mars Rover"
+  },
+  {
+    "title": "Astronomy Picture of the Day",
+    "date": "2025-10-01",
+    "url": "https://apod.nasa.gov/apod/image/2510/WitchBroom_Meyers_6043.jpg",
+    "local_path": "/data/images/WitchBroom_Meyers_6043.jpg",
+    "source": "APOD"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811443256EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811443256EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811443214EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811443214EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811443172EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811443172EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811443130EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811443130EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811443088EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811443088EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811443046EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811443046EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811442965EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811442965EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811442923EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811442923EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811442881EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811442881EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811442839EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811442839EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811442797EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811442797EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811442579EDR_F1182832CCAM02663M_.JPG",
+    "local_path": "/data/images/CR0_811442579EDR_F1182832CCAM02663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811442432EDR_F1182832CCAM01663M_.JPG",
+    "local_path": "/data/images/CR0_811442432EDR_F1182832CCAM01663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ccam/CR0_811441742EDR_F1182832CCAM01663M_.JPG",
+    "local_path": "/data/images/CR0_811441742EDR_F1182832CCAM01663M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_RIGHT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ncam/NRB_811463368EDR_F1182832NCAM00200M_.JPG",
+    "local_path": "/data/images/NRB_811463368EDR_F1182832NCAM00200M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_RIGHT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ncam/NRB_811462913EDR_F1182832NCAM00200M_.JPG",
+    "local_path": "/data/images/NRB_811462913EDR_F1182832NCAM00200M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_RIGHT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ncam/NRB_811461722EDR_F1182832NCAM00200M_.JPG",
+    "local_path": "/data/images/NRB_811461722EDR_F1182832NCAM00200M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_RIGHT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/ncam/NRB_811460794EDR_F1182832NCAM00200M_.JPG",
+    "local_path": "/data/images/NRB_811460794EDR_F1182832NCAM00200M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity FHAZ_LEFT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/fcam/FLB_811463494EDR_F1182832FHAZ00337M_.JPG",
+    "local_path": "/data/images/FLB_811463494EDR_F1182832FHAZ00337M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity FHAZ_LEFT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/fcam/FLB_811463341EDR_F1182832FHAZ00200M_.JPG",
+    "local_path": "/data/images/FLB_811463341EDR_F1182832FHAZ00200M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity FHAZ_LEFT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/fcam/FLB_811462876EDR_F1182832FHAZ00200M_.JPG",
+    "local_path": "/data/images/FLB_811462876EDR_F1182832FHAZ00200M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity FHAZ_LEFT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/fcam/FLB_811461690EDR_F1182832FHAZ00200M_.JPG",
+    "local_path": "/data/images/FLB_811461690EDR_F1182832FHAZ00200M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity FHAZ_LEFT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/fcam/FLB_811460751EDR_F1182832FHAZ00200M_.JPG",
+    "local_path": "/data/images/FLB_811460751EDR_F1182832FHAZ00200M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity FHAZ_RIGHT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/fcam/FRB_811463494EDR_F1182832FHAZ00337M_.JPG",
+    "local_path": "/data/images/FRB_811463494EDR_F1182832FHAZ00337M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity RHAZ_LEFT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/rcam/RLB_811463522EDR_F1182832RHAZ00337M_.JPG",
+    "local_path": "/data/images/RLB_811463522EDR_F1182832RHAZ00337M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity RHAZ_RIGHT_B",
+    "date": "2025-09-18",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04663/opgs/edr/rcam/RRB_811463522EDR_F1182832RHAZ00337M_.JPG",
+    "local_path": "/data/images/RRB_811463522EDR_F1182832RHAZ00337M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Astronomy Picture of the Day",
+    "date": "2025-10-01",
+    "url": "https://apod.nasa.gov/apod/image/2510/WitchBroom_Meyers_6043.jpg",
+    "local_path": "/data/images/WitchBroom_Meyers_6043.jpg",
+    "source": "APOD"
+  },
+  {
+    "title": "Curiosity Mars Descent Imager",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/msss/04680/mrdi/4680MD0017320000303128E01_DXXX.jpg",
+    "local_path": "/data/images/4680MD0017320000303128E01_DXXX.jpg",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity MAST_LEFT",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/msss/04680/mcam/4680ML1084440061406887C00_DXXX.jpg",
+    "local_path": "/data/images/4680ML1084440061406887C00_DXXX.jpg",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812952389EDR_F1190924CCAM04679M_.JPG",
+    "local_path": "/data/images/CR0_812952389EDR_F1190924CCAM04679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812952148EDR_F1190924CCAM04679M_.JPG",
+    "local_path": "/data/images/CR0_812952148EDR_F1190924CCAM04679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812952105EDR_F1190924CCAM04679M_.JPG",
+    "local_path": "/data/images/CR0_812952105EDR_F1190924CCAM04679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812951865EDR_F1190924CCAM04679M_.JPG",
+    "local_path": "/data/images/CR0_812951865EDR_F1190924CCAM04679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812951822EDR_F1190924CCAM04679M_.JPG",
+    "local_path": "/data/images/CR0_812951822EDR_F1190924CCAM04679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812951780EDR_F1190924CCAM04679M_.JPG",
+    "local_path": "/data/images/CR0_812951780EDR_F1190924CCAM04679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812951539EDR_F1190924CCAM04679M_.JPG",
+    "local_path": "/data/images/CR0_812951539EDR_F1190924CCAM04679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812951496EDR_F1190924CCAM04679M_.JPG",
+    "local_path": "/data/images/CR0_812951496EDR_F1190924CCAM04679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812951454EDR_F1190924CCAM04679M_.JPG",
+    "local_path": "/data/images/CR0_812951454EDR_F1190924CCAM04679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812951198EDR_F1190924CCAM04679M_.JPG",
+    "local_path": "/data/images/CR0_812951198EDR_F1190924CCAM04679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812950952EDR_F1190924CCAM03679M_.JPG",
+    "local_path": "/data/images/CR0_812950952EDR_F1190924CCAM03679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity CHEMCAM_RMI",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ccam/CR0_812950256EDR_F1190924CCAM03679M_.JPG",
+    "local_path": "/data/images/CR0_812950256EDR_F1190924CCAM03679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity FHAZ_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/fcam/FLB_812960269EDR_F1191344FHAZ00302M_.JPG",
+    "local_path": "/data/images/FLB_812960269EDR_F1191344FHAZ00302M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity FHAZ_RIGHT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/fcam/FRB_812960269EDR_F1191344FHAZ00302M_.JPG",
+    "local_path": "/data/images/FRB_812960269EDR_F1191344FHAZ00302M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961942EDR_F1191344CCAM05679M_.JPG",
+    "local_path": "/data/images/NLB_812961942EDR_F1191344CCAM05679M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961879EDR_F1191344NCAM00354M_.JPG",
+    "local_path": "/data/images/NLB_812961879EDR_F1191344NCAM00354M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961848EDR_F1191344NCAM00354M_.JPG",
+    "local_path": "/data/images/NLB_812961848EDR_F1191344NCAM00354M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961817EDR_F1191344NCAM00354M_.JPG",
+    "local_path": "/data/images/NLB_812961817EDR_F1191344NCAM00354M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961786EDR_F1191344NCAM00354M_.JPG",
+    "local_path": "/data/images/NLB_812961786EDR_F1191344NCAM00354M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961761EDR_F1191344NCAM00354M_.JPG",
+    "local_path": "/data/images/NLB_812961761EDR_F1191344NCAM00354M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961714EDR_F1191344NCAM00253M_.JPG",
+    "local_path": "/data/images/NLB_812961714EDR_F1191344NCAM00253M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961683EDR_F1191344NCAM00253M_.JPG",
+    "local_path": "/data/images/NLB_812961683EDR_F1191344NCAM00253M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961652EDR_F1191344NCAM00253M_.JPG",
+    "local_path": "/data/images/NLB_812961652EDR_F1191344NCAM00253M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961569EDR_F1191344NCAM00253M_.JPG",
+    "local_path": "/data/images/NLB_812961569EDR_F1191344NCAM00253M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961537EDR_F1191344NCAM00253M_.JPG",
+    "local_path": "/data/images/NLB_812961537EDR_F1191344NCAM00253M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961513EDR_F1191344NCAM00253M_.JPG",
+    "local_path": "/data/images/NLB_812961513EDR_F1191344NCAM00253M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812961489EDR_F1191344NCAM00253M_.JPG",
+    "local_path": "/data/images/NLB_812961489EDR_F1191344NCAM00253M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812960571EDR_F1191344NCAM00252M_.JPG",
+    "local_path": "/data/images/NLB_812960571EDR_F1191344NCAM00252M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812960541EDR_F1191344NCAM00252M_.JPG",
+    "local_path": "/data/images/NLB_812960541EDR_F1191344NCAM00252M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812960510EDR_F1191344NCAM00252M_.JPG",
+    "local_path": "/data/images/NLB_812960510EDR_F1191344NCAM00252M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812960478EDR_F1191344NCAM00252M_.JPG",
+    "local_path": "/data/images/NLB_812960478EDR_F1191344NCAM00252M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812960446EDR_F1191344NCAM00252M_.JPG",
+    "local_path": "/data/images/NLB_812960446EDR_F1191344NCAM00252M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812960355EDR_F1191344NCAM00353M_.JPG",
+    "local_path": "/data/images/NLB_812960355EDR_F1191344NCAM00353M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812960332EDR_F1191344NCAM00353M_.JPG",
+    "local_path": "/data/images/NLB_812960332EDR_F1191344NCAM00353M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812959750EDR_F1191308NCAM00485M_.JPG",
+    "local_path": "/data/images/NLB_812959750EDR_F1191308NCAM00485M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812959723EDR_F1191308NCAM00485M_.JPG",
+    "local_path": "/data/images/NLB_812959723EDR_F1191308NCAM00485M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812959261EDR_F1191278NCAM00385M_.JPG",
+    "local_path": "/data/images/NLB_812959261EDR_F1191278NCAM00385M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Curiosity NAV_LEFT_B",
+    "date": "2025-10-05",
+    "url": "https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/04680/opgs/edr/ncam/NLB_812959229EDR_F1191278NCAM00385M_.JPG",
+    "local_path": "/data/images/NLB_812959229EDR_F1191278NCAM00385M_.JPG",
+    "source": "Mars Rover"
+  },
+  {
+    "title": "Callisto: Dirty Battered Iceball",
+    "date": "2025-09-01",
+    "url": "https://apod.nasa.gov/apod/image/2509/Callisto_Voyager2Gill_1602.jpg",
+    "local_path": "/data/images/Callisto_Voyager2Gill_1602.jpg",
+    "source": "APOD"
   }
 ]

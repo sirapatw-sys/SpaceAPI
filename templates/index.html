@@ -102,13 +102,25 @@ body {
         <section class="grid" aria-label="Gallery">
             {% for item in items %}
             <article class="space-card" role="article">
-                <img class="space-img" src="{{ item.local_path }}" alt="{{ item.title }}" loading="lazy" data-title="{{ item.title }}" data-src="{{ item.local_path }}">
+                <img class="space-img" 
+     src="{{ item.url }}" 
+     alt="{{ item.title or item.camera }}" 
+     loading="lazy" 
+     data-title="{{ item.title or item.camera }}" 
+     data-src="{{ item.url }}">
+
                 <div class="space-body">
                     <div class="space-title">{{ item.title }}</div>
-                    <div class="space-meta">{{ item.date }} · {{ item.source }}</div>
+                    <div class="space-meta">
+    {{ item.date }}
+    {% if item.rover %} · {{ item.rover }}{% endif %}
+    {% if item.camera %} · {{ item.camera }}{% endif %}
+</div>
+
                     <div class="card-actions">
                         <button class="btn btn-sm btn-outline-light small-btn" data-bs-toggle="modal" data-bs-target="#previewModal" data-src="{{ item.local_path }}" data-title="{{ item.title }}"><i class="fa fa-eye me-1"></i>Preview</button>
-                        <a class="btn btn-sm btn-primary small-btn" href="{{ item.local_path }}" target="_blank" rel="noopener"><i class="fa fa-download me-1"></i>Open</a>
+                        <a class="btn btn-sm btn-primary small-btn" href="{{ item.url }}" target="_blank" rel="noopener">
+
                     </div>
                 </div>
             </article>

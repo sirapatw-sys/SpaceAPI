@@ -1,102 +1,105 @@
 import os
+import requests
 import json
 from pathlib import Path
-import requests
-from dotenv import load_dotenv
+from datetime import date
 
-# โหลดค่า API KEY จาก .env
-load_dotenv()
-NASA_API_KEY = os.environ.get("NASA_API_KEY")
-if not NASA_API_KEY:
-    raise ValueError("กรุณาตั้งค่า NASA_API_KEY ในไฟล์ .env")
+# ใช้ .env หรือ Environment Variables จาก Render
+NASA_API_KEY = os.getenv("NASA_API_KEY", "DEMO_KEY")
 
-# โฟลเดอร์จัดเก็บข้อมูล
 DATA_DIR = Path(__file__).parent.parent / "data"
-IMAGES_DIR = DATA_DIR / "images"
 INDEX_FILE = DATA_DIR / "index.json"
 
-# สร้างโฟลเดอร์ถ้าไม่มี
+# สร้าง data directory ถ้ายังไม่มี
 DATA_DIR.mkdir(exist_ok=True)
-IMAGES_DIR.mkdir(exist_ok=True)
 
-def fetch_apod(date: str = None):
+
+def fetch_apod(date: str | None = None):
     """
-    ดึง APOD ของ NASA
-    :param date: 'YYYY-MM-DD' ถ้าไม่ระบุจะใช้วันปัจจุบัน
+    Fetch NASA Astronomy Picture of the Day (APOD)
+    and save metadata (not image file) into data/index.json
     """
-    url = f"https://api.nasa.gov/planetary/apod?api_key={NASA_API_KEY}"
+    api_url = "https://api.nasa.gov/planetary/apod"
+    params = {"api_key": NASA_API_KEY}
     if date:
-        url += f"&date={date}"
-    
-    r = requests.get(url)
-    r.raise_for_status()
-    data = r.json()
+        params["date"] = date
 
-    img_url = data.get("hdurl") or data.get("url")
-    img_name = img_url.split("/")[-1]
-    local_path = IMAGES_DIR / img_name
-    if not local_path.exists():
-        img_data = requests.get(img_url).content
-        with open(local_path, "wb") as f:
-            f.write(img_data)
+    print(f"Fetching APOD for date: {date or 'latest'}")
+    response = requests.get(api_url, params=params)
+    response.raise_for_status()
+    data = response.json()
 
+    # เตรียมข้อมูลภาพ
     item = {
-        "title": data.get("title"),
-        "date": data.get("date"),
-        "url": img_url,
-        "local_path": f"/data/images/{img_name}",
-        "source": "APOD"
+        "type": "apod",
+        "title": data.get("title", "Unknown"),
+        "date": data.get("date", str(date or "")),
+        "url": data.get("url"),
+        "explanation": data.get("explanation", ""),
+        "media_type": data.get("media_type", "image")
     }
-    _append_index(item)
 
-
-def fetch_mars(date: str = None):
-    """
-    ดึงภาพจากยาน Curiosity
-    :param date: 'YYYY-MM-DD' ถ้าไม่ระบุจะใช้ latest_photos
-    """
-    if date:
-        url = f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date={date}&api_key={NASA_API_KEY}"
-    else:
-        url = f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key={NASA_API_KEY}"
-
-    r = requests.get(url)
-    r.raise_for_status()
-    data = r.json()
-
-    photos = data.get("photos") if date else data.get("latest_photos", [])
-
-    for photo in photos:
-        img_url = photo["img_src"]
-        img_name = img_url.split("/")[-1]
-        local_path = IMAGES_DIR / img_name
-        if not local_path.exists():
-            img_data = requests.get(img_url).content
-            with open(local_path, "wb") as f:
-                f.write(img_data)
-
-        item = {
-            "title": f"{photo['rover']['name']} {photo['camera']['full_name']}",
-            "date": photo["earth_date"],
-            "url": img_url,
-            "local_path": f"/data/images/{img_name}",
-            "source": "Mars Rover"
-        }
-        _append_index(item)
-
-
-def _append_index(item: dict):
-    """
-    เพิ่มข้อมูลลง index.json
-    """
-    data = []
+    # อ่าน index.json เดิม
+    items = []
     if INDEX_FILE.exists():
-        if INDEX_FILE.stat().st_size > 0:  # file not empty
+        try:
             with open(INDEX_FILE, "r", encoding="utf-8") as f:
-                try:
-                    data = json.load(f)
-                except json.JSONDecodeError:
-                    data = []
-    data.append(item)
+                items = json.load(f)
+        except json.JSONDecodeError:
+            items = []
+
+    # เพิ่มรายการใหม่
+    items.append(item)
+
+    # บันทึกใหม่
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump(items, f, indent=2)
+
+    print(f"✅ Saved APOD for {item['date']} ({item['title']})")
+
+
+def fetch_mars(date: str | None = None):
+    """
+    Fetch NASA Mars Rover Photos (Curiosity)
+    and save metadata (not image file) into data/index.json
+    """
+    api_url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos"
+    params = {"api_key": NASA_API_KEY}
+
+    # ถ้าไม่มีวันที่ ให้ใช้วันนี้
+    params["earth_date"] = date or str(date or "2025-10-08")
+
+    print(f"Fetching Mars photos for {params['earth_date']}")
+    response = requests.get(api_url, params=params)
+    response.raise_for_status()
+    data = response.json()
+
+    photos = data.get("photos", [])
+    if not photos:
+        print("⚠️ No Mars photos found for that date.")
+        return
+
+    # อ่าน index.json เดิม
+    items = []
+    if INDEX_FILE.exists():
+        try:
+            with open(INDEX_FILE, "r", encoding="utf-8") as f:
+                items = json.load(f)
+        except json.JSONDecodeError:
+            items = []
+
+    # เพิ่มภาพทั้งหมด
+    for p in photos[:20]:  # จำกัด 20 ภาพเพื่อความเบา
+        items.append({
+            "type": "mars",
+            "date": p["earth_date"],
+            "camera": p["camera"]["full_name"],
+            "url": p["img_src"],  # ✅ ใช้ URL ตรงจาก NASA
+            "rover": p["rover"]["name"]
+        })
+
+    # บันทึกใหม่
+    with open(INDEX_FILE, "w", encoding="utf-8") as f:
+        json.dump(items, f, indent=2)
+
+    print(f"✅ Saved {len(photos[:20])} Mars photos for {params['earth_date']}")
