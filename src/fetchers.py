@@ -15,6 +15,7 @@ INDEX_FILE = DATA_DIR / "index.json"
 DATA_DIR.mkdir(exist_ok=True)
 IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
+
 def fetch_apod(date: str | None = None):
     """Fetch NASA APOD และบันทึก metadata + ภาพใน data/images"""
     api_url = "https://api.nasa.gov/planetary/apod"
@@ -38,7 +39,6 @@ def fetch_apod(date: str | None = None):
             img_data = requests.get(img_url).content
             with open(dst, "wb") as f:
                 f.write(img_data)
-        # เปลี่ยนให้ path ตรงกับ route Flask
         local_path = f"/data/images/{img_name}"
 
     item = {
@@ -52,7 +52,6 @@ def fetch_apod(date: str | None = None):
         "source": "APOD"
     }
 
-    # อ่าน index.json เดิม
     items = []
     if INDEX_FILE.exists():
         try:
@@ -61,10 +60,8 @@ def fetch_apod(date: str | None = None):
         except json.JSONDecodeError:
             items = []
 
-    # เพิ่มรายการใหม่
     items.append(item)
 
-    # บันทึกใหม่
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         json.dump(items, f, indent=2)
 
@@ -73,23 +70,25 @@ def fetch_apod(date: str | None = None):
 
 def fetch_mars(date: str | None = None):
     """Fetch NASA Mars Rover Photos และบันทึก metadata + ภาพใน data/images"""
-    api_url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos"
-    params = {"api_key": NASA_API_KEY}
+    if date is None:
+        # ดึง latest_photos
+        api_url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos"
+        params = {"api_key": NASA_API_KEY}
+    else:
+        # ดึง photos ตามวัน
+        api_url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos"
+        params = {"api_key": NASA_API_KEY, "earth_date": date}
 
-    # ถ้าไม่มีวันที่ ให้ใช้วันนี้
-    params["earth_date"] = date or "2025-10-08"
-
-    print(f"Fetching Mars photos for {params['earth_date']}")
+    print(f"Fetching Mars photos for {date or 'latest'}")
     response = requests.get(api_url, params=params)
     response.raise_for_status()
     data = response.json()
 
-    photos = data.get("photos", [])
+    photos = data.get("latest_photos", []) if date is None else data.get("photos", [])
     if not photos:
-        print("⚠️ No Mars photos found for that date.")
+        print(f"⚠️ No Mars photos found for {date or 'latest'}.")
         return
 
-    # อ่าน index.json เดิม
     items = []
     if INDEX_FILE.exists():
         try:
@@ -98,7 +97,6 @@ def fetch_mars(date: str | None = None):
         except json.JSONDecodeError:
             items = []
 
-    # เพิ่มภาพทั้งหมด (จำกัด 20 ภาพ)
     for p in photos[:20]:
         img_url = p["img_src"]
         img_name = img_url.split("/")[-1]
@@ -118,8 +116,7 @@ def fetch_mars(date: str | None = None):
             "source": "Mars Rover"
         })
 
-    # บันทึกใหม่
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         json.dump(items, f, indent=2)
 
-    print(f"✅ Saved {len(photos[:20])} Mars photos for {params['earth_date']}")
+    print(f"✅ Saved {len(photos[:20])} Mars photos for {date or 'latest'}")
